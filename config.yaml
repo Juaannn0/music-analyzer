@@ -1,0 +1,32 @@
+﻿# Configuración global de Music Analyzer V1
+
+input_dir: "input"
+output_dir: "output"
+logs_dir: "logs"
+
+hardware:
+  device: "auto" # Opciones: auto, cpu, cuda
+  num_threads: 6 # Hilos recomendados para CPU (ajustado a Ryzen 5 4600G)
+
+separation:
+  backend: "demucs" # Opciones V1: demucs
+  model: "htdemucs" # Modelos de Demucs: htdemucs, htdemucs_ft
+  shifts: 2 # Número de predicciones con desplazamiento temporal (1 = rápido, 2+ = mejor calidad)
+  overlap: 0.25 # Solapamiento entre segmentos
+  segment_length: 7.8 # Longitud del segmento en segundos (ajustado a memoria)
+
+transcription:
+  model: "small" # Opciones: tiny, base, small, medium, large-v3, turbo
+  language: null # null = autodetección; o código ISO ej. "es", "en"
+  vad: true # Activa Silero VAD para filtrar silencios
+  condition_on_previous_text: false
+  beam_size: 5
+  temperature: 0.0
+
+audio:
+  normalize_peak: true # Normaliza el stem vocal a -1.0 dBFS antes de Whisper
+  high_pass_filter: false # Filtro pasa-altos a 80 Hz (experimental)
+
+execution:
+  force: false # Si es true, sobrescribe resultados existentes
+  mode: "full" # full, separation-only, transcription-only

@@ -1,0 +1,54 @@
+﻿# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Audio Data & Output Directories
+# Ignora todo el contenido de input/ y output/ excepto sus archivos .gitkeep
+input/*
+!input/.gitkeep
+output/*
+!output/.gitkeep
+
+# Logs
+logs/*
+!logs/.gitkeep
+*.log
+
+# Deep Learning Models & Cache
+models/
+.cache/
+*.pt
+*.pth
+*.bin
+*.onnx
+
+# Temporary Test Directories
+test_workspace/
+temp_*/
+*.wav
+*.mp3
+*.flac
+*.m4a
+*.ogg
+
+# Pero conserva los .gitkeep
+!.gitkeep
+
+# IDEs & System files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
